@@ -13,7 +13,7 @@ export interface RiderVideoState {
   duration: number | null;
 }
 
-const RIDER_VIDEO_SRC = "/assets/avatar/rider.webm";
+const RIDER_VIDEO_SRC = `${import.meta.env.BASE_URL}assets/avatar/rider.webm`;
 const LOAD_TIMEOUT_MS = 8000;
 const DEFAULT_ASPECT = 9 / 16;
 

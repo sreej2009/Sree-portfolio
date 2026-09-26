@@ -11,7 +11,8 @@ export interface RiderFrameSequenceState {
   frameCount: number;
 }
 
-const MANIFEST_URL = "/assets/avatar/rider-frames/manifest.json";
+const ASSET_BASE = `${import.meta.env.BASE_URL}assets/avatar/rider-frames`;
+const MANIFEST_URL = `${ASSET_BASE}/manifest.json`;
 const MOBILE_BREAKPOINT_PX = 700;
 
 interface Manifest {
@@ -133,7 +134,7 @@ export function useRiderFrameSequence(): RiderFrameSequenceState & {
       }
 
       const frameUrl = (i: number) =>
-        `/assets/avatar/rider-frames/${variantName}/frame-${String(i + 1).padStart(4, "0")}.webp`;
+        `${ASSET_BASE}/${variantName}/frame-${String(i + 1).padStart(4, "0")}.webp`;
 
       framesRef.current = new Array(manifest.count).fill(null);
 
